@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700;900&display=swap');
+* {
+  scroll-behavior: smooth;
+}
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: var(--text-color);
+}
+
+:root {
+    --background-color: rgb(199, 17, 17);
+    --text-color: rgb(22, 21, 21);
+    --main-color: #eff0f1;
+    --warning: #d9a402;
+}
+/* header css start  */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(209, 206, 206);
+    position: sticky;
+    top: 0;
+    /* width: 100%; */
+    z-index: 99;
+}
+.logo {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+  }
+  .actual-text,
+  .hover-text {
+  font-size: 2rem;
+  }
+  .actual-text {
+    color: var(--main-color);
+  }
+  .hover-text {
+    position: absolute;
+    border-radius: 3px;
+    color: var(--warning);
+    width: 0%;
+    inset: 0;
+    border-right: 4px solid var(--warning);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .logo:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--warning))
+  }
+header ul li{
+    display: inline;
+    margin: 0px 50px;
+}
+header ul li a {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: all 0.5s;
+  position: relative;
+}
+header ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: all 0.5s;
+}
+header ul li a:hover::after {
+  width: 100%;
+}
+li a:hover {
+  color:  #eff0f1bb;
+}
+header .loginBtn, header .registerBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--warning);
+  font-size: 1rem;
+  transition: 0.5s;
+  margin: 0px 10px;
+  font-weight: 400;
+}
+header .loginBtn:hover , header .registerBtn:hover{
+  background-color: var(--warning);
+}
+/* header css end */
+
+/* home cover start  */
+.home .container {
+  width: 100%;
+  min-height: 640px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 0%;
+}
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.5);
+}
+.container .home_text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
+.container .home_text p {
+  color: var(--main-color);
+  width: 450px;
+  left: 100px;
+  margin-left: 100px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.home_text p span {
+  display: block;
+  text-align: end;
+  padding: 10px;
+  color: var(--warning);
+}
+/* Home cover end  */
+
+/* content start */
+.container_content {
+  /* max-width: 980px; */
+  margin: 20px auto 10px auto;
+}
+
+.container_content .whiskey_list {
+  max-width: 980px;
+  margin: 20px auto 10px auto;
+  font-size: 1.2rem;
+  color: var(--main-color);
+  border-bottom: 1px solid var(--warning);
+  text-align: center;
+}
+.premium_whiskey {
+  max-width: 960px;
+  height: 100%;
+  margin: 20px auto 0px auto;
+  display: grid;
+  grid-template-columns:  repeat(auto-fit,minmax(180px, auto));
+  gap: 1rem;
+}
+
+.premium_whiskey_box {
+  width: 100%;
+  /* height: 500px; */
+  border-radius: 20px;
+  /* overflow: hidden; */
+  position: relative;
+  /* box-shadow: 1px 2px 3px rgba(221, 105, 10, 0.55); */
+  cursor: pointer;
+  margin-right: 100px;
+  transition: all 0.5s;
+  border: 1px solid #8f6d09c4;
+}
+.premium_whiskey_box:hover {
+  transform: scale(0.95);
+  border: none;
+  box-shadow: 3px 5px 10px rgba(221, 105, 10, 0.55);
+}
+.premium_whiskey_box img {
+  width: 100%;
+  /* height: 100%; */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  filter: brightness(0.9);
+}
+.premium_whiskey_box span {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #d9a402 */
+}
+.premium_whiskey_box span::before {
+  content: 'Premium';
+  position: absolute;
+  width: 220px;
+  height: 30px;
+  background-color: var(--background-color);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  box-shadow: 0 5px 1px var(--background-color);
+}
+
+.premium_whiskey_box span::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+  box-shadow: 140px -140px rgb(128, 5, 5);
+  background-color: rgb(128, 5, 5);
+}
+.premium_whiskey_box p {
+  height: 40px;
+  color: var(--warning);
+  text-align: center;
+  padding: 10px 15px 0px 15px;
+}
+.btn_group {
+  /* background-color: #d9a402; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.btn_group .price {
+  color: wheat;
+  /* background-color: red; */
+  margin: 0px;
+  transition: 0.3s ease-in-out;
+}
+.premium_whiskey_box:hover .btn_group .price {
+  transform: translateY(30px);
+  opacity: 0;
+  /* display: none; */
+}
+.premium_whiskey_box button {
+  background-color: var(--background-color);
+  color: var(--main-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 0px auto;
+  bottom: 0%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.premium_whiskey_box button:hover {
+  background-color: rgba(206, 38, 38, 0.774);
+}
+.premium_whiskey_box:hover button {
+  opacity: 1.2;
+  transform: translateY(-30px);
+}
+.whiskey_for_you {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  height: 300px;
+  background-color: rgb(31, 31, 28);
+}
+.content_text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content_bg {
+  width: 50%;
+  object-fit: cover;
+}
+.content_text h3 {
+  font-size: 25px;
+  color: var(--warning);
+  text-transform: uppercase;
+  /* background-color: red; */
+  margin-bottom: 10px;
+  text-align: center;
+}
+.content_text p {
+  color: #eff0f196;
+  padding: 0px 70px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content_text button {
+  padding: 10px 15px;
+  background-color: #d9a302b2;
+  color: var(--main-color);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.content_text button:hover {
+  background-color: #85660abe;
+}
+.content_text .span_text {
+  margin-top: 30px;
+}
+.content_text .span_text span {
+  color: #eff0f1be;
+  margin-right: 40px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.recommended_whiskey {
+  max-width: 980px;
+  margin: 30px auto 0px auto;
+  text-align: center;
+  /* background-color: #eff0f1; */
+}
+.recommened_whiskey_box {
+  /* max-width: 960px; */
+  max-width: 100%;
+  /* height: 100%; */
+  margin: 20px auto 0px auto;
+  display: grid;
+  grid-template-columns:  repeat(auto-fit,minmax(320px, auto));
+  gap: 1rem;
+}
+.recommended_whiskey h3 {
+  color: var(--warning);
+  font-size: 25px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--main-color);
+}
+.whiskey_box {
+  width: 100%;
+  height: 600px;
+  background-color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  color: var(--main-color);
+  box-shadow: 2px 2px 2px #51565a;
+  transition: all 0.5s;
+}
+.whiskey_box:hover {
+  transform: scale(0.95);
+  color: #a88e1a;
+}
+.whiskey_box_img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+}
+.whiskey_box h4 {
+  font-size: 1rem;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+}
+.whiskey_box .alchol {
+  color: #606468;
+}
+.whiskey_box .price {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 300;
+}
+.motion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+ }
+ .motion .motion-gp {
+  width: 960px;
+ }
+ .motion .motion-gp marquee img {
+  transition: 0.8s;
+ }
+ .motion:hover .motion-gp marquee img {
+  transform: rotate(0.18turn);
+ }
+/* content close  */
+
+/* Footer start  */
+.contact_form {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0px;
+  text-align: center;
+  background-color: var(--main-color);
+}
+.contact_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+.contact_content h2 {
+  font-size: 30px;
+  color: var(--background-color);
+  letter-spacing: 3px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.contact_content .form {
+  /* background-color: var(--background-color); */
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+.contact_content .form .input {
+  color: var(--background-color);
+  border: 2px solid var(--background-color);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  max-width: 190px;
+  /* border: none; */
+ }
+ .input:active {
+  box-shadow: 2px 2px 15px var(--background-color) inset;
+ }
+ .contact_content .btn{
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  border-radius: 7px;
+  transition: all 0.5s;
+  /* background-color: var(--background-color); */
+ }
+ .contact_content .btn:hover {
+  background-color: var(--text-color);
+  color: var(--main-color);
+ }
+ .contact_img {
+  width: 700px;
+  margin-right: 50px;
+ }
+ .contact_img img {
+  width: 100%;
+ }
+ .footer {
+  background-color: var(--text-color);
+  /* height: 400px; */
+  color: var(--main-color);
+ }
+ .social_media {
+  max-width: 980px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+ .social_media img {
+  width: 200px;
+ }
+ .social_media .social_media_contact{
+  color: var(--main-color);
+  cursor: pointer;
+ }
+ .social_media_contact span {
+  margin-right: 20px;
+ }
+ .social_media_contact span:hover .fa-facebook{
+  color: #3b5998;
+ }
+ .social_media_contact span:hover .fa-instagram {
+  color:  #df6127c5;
+ }
+ .social_media_contact span:hover .fa-twitter {
+  color:  #00acee;
+ }
+ .social_media_contact span:hover .fa-pinterest {
+  color:  #c8232c;
+ }
+ .social_media_contact span:hover .fa-youtube {
+  color:  #c4302b;
+ }
+ .social_media_contact span:hover .fa-linkedin {
+  color:  #0072b1;
+ }
+ .social_media_contact span .fa-brands {
+  font-size: 30px;
+ }
+ .order {
+  max-width: 980px;
+  /* background-color: red; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+ }
+ .order h2 {
+  font-size: 30px;
+  letter-spacing: 4px;
+ }
+ .order .fa-right-long {
+  display: flex;
+  align-items: center;
+ }
+ .order .order_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ .order .order_btn button {
+  border: 1px solid var(--warning);
+  background-color: var(--text-color);
+  font-size: 17px;
+  font-weight: 300;
+  padding: 15px 30px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ }
+ .order .order_btn button:hover {
+  background-color:  #d9a402;
+ }
+ .order .order_btn a {
+  color: var(--main-color);
+  margin-top: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+ }
+ .footer_navigation {
+  max-width: 980px;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+ }
+ .footer_navigation_group_title {
+  color: var(--warning);
+  font-size: 18px;
+  text-transform: uppercase;
+  /* background-color: red; */
+  text-align: center;
+ }
+ .footer_navigation_group_nav_list {
+  font-size: 15px;
+  list-style-type: none;
+  padding: 0%;
+ }
+ .footer_navigation_group_nav_list_item {
+    margin: 15px 0px;
+    cursor: pointer;
+    
+    transition: all 0.5s;
+ }
+ .footer_navigation_group_nav_list_item a {
+  font-weight: 300;
+  line-height: 10px;
+  text-decoration: none;
+  color: var(--main-color);
+  position: relative;
+ }
+ .footer_navigation_group_nav_list_item a::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: all 0.5s;
+ }
+ .footer_navigation_group_nav_list_item:hover a::after {
+  width: 100%;
+
+ }
+ .footer_copyright {
+  background-color: #000;
+  padding: 20px;
+ }
+ .footer_copyright_firstText, .footer_copyright_secText {
+  text-align: center;
+  color: #a88e1a;
+  margin-top: 5px;
+  font-size: 13px;
+ }
+
+ @media (max-width: 1400px) {
+  header ul li {
+    margin: 0px 20px;
+  }
+  header ul li a {
+    font-size: 1.5rem;
+  }
+ }
+
+ @media (max-width: 1200px) {
+  .actual-text, .hover-text {
+    font-size: 1.8rem;
+  }
+  header ul li {
+    margin: 0px 20px;
+  }
+  header ul li a {
+    font-size: 1.2rem;
+  }
+  header .loginBtn, header .registerBtn {
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+  .home .container .home_text p {
+    font-size: 1.8rem;
+  }
+  .whiskey_for_you .content_text {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .contact_img {
+    width: 500px;
+  }
+ }
+ @media (max-width: 1000px) {
+  header ul {
+    display: none;
+  }
+  .container .home_text p {
+    margin-left: 50px;
+  }
+  .whiskey_for_you .content_text h3 {
+    font-size: 18px;
+  }
+  .footer .social_media {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .order {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .order h2 {
+    font-size: 20px;
+  }
+ }
+
+ @media (max-width: 960px) {
+  .home .container .home_text p {
+    font-size: 1.4rem;
+  }
+  .premium_whiskey {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .recommened_whiskey_box {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+ }
+
+ @media (max-width: 900px) {
+  .whiskey_for_you .content_text h3 {
+    font-size: 15px;
+  }
+  .whiskey_for_you .content_text p {
+    font-size: 12px;
+  }
+  .whiskey_for_you .content_text button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .whiskey_for_you .content_text .span_text span {
+    font-size: 12px;
+  }
+ }
+
+ @media (max-width: 800px) {
+  .actual-text, .hover-text {
+    font-size: 1.5rem;
+  }
+  header .loginBtn, header .registerBtn {
+    font-size: 0.8rem;
+    margin: 0px 5px;
+    padding: 7px 14px;
+    border-radius: 5px;
+  }
+  .home {
+    margin-bottom: 0px;
+  }
+  .home .container .home_text p {
+    font-size: 1rem;
+  }
+  .whiskey_for_you {
+    flex-direction: column;
+    height: 500px;
+    overflow: hidden;
+  }
+  .whiskey_for_you .content_text {
+    margin: 0px;
+    width: 100%;
+  }
+  .whiskey_for_you .content_bg {
+    width: 100%;
+    height: 50%;
+  }
+  .contact_form .contact_content h2 {
+    font-size: 1.2rem;
+  }
+  .contact_form .contact_content .form .input {
+    width: 130px;
+  }
+  .contact_form .contact_content .btn {
+    letter-spacing: 1px;
+    padding: 10px;
+  }
+  .footer .social_media .social_media_contact span i {
+    font-size: 20px;
+  }
+  .footer .order h2 {
+    letter-spacing: 1px;
+  }
+  .footer .order i {
+    display: none;
+  }
+  .footer .order_btn button {
+    font-size: 13px;
+    /* font-weight: 300; */
+    padding: 10px 20px;
+  }
+  .order .order_btn a {
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+  .footer_navigation_group_title {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .footer_navigation_group_nav_list_item a {
+    font-size: 12px;
+  }
+ }
+ @media (max-width: 700px) {
+  .contact_form {
+    /* height: 400px; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact_form .contact_content {
+    margin-left: 0px;
+  }
+  .contact_form .contact_img {
+    width: 400px;
+    margin-right: 0px;
+  }
+  .footer_navigation {
+    margin-top: 20px;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns:  repeat(auto-fit,minmax(180px, auto));
+  }
+  .footer_navigation_group {
+    /* background-color: white; */
+    margin: 0px 20px;
+  }
+  .footer_navigation_group_title {
+    /* background-color: red; */
+    text-align: left;
+  }
+  .footer_navigation_group_nav_list_item {
+    margin: 8px 0px;
+  }
+ }
+ @media (max-width: 631px) {
+  .premium_whiskey_box img {
+    height: 350px;
+  }
+ }
+ @media (max-width: 600px) {
+  .home .container .home_text {
+    width: 60%;
+  }
+ }
+ @media (max-width: 500px) {
+  .actual-text, .hover-text {
+    font-size: 1rem;
+  }
+  header .btn-group {
+    margin-right: -20px;
+  }
+  header .loginBtn, header .registerBtn {
+    font-size: 0.7rem;
+    margin: 0px 5px;
+    padding: 6px 12px;
+  }
+  .whiskey_for_you .content_text p{
+    /* background-color: #00acee; */
+    padding: 0px 20px;
+  }
+  .content_text .span_text {
+    margin-top: 15px;
+  }
+  .recommened_whiskey_box {
+    grid-template-columns:  repeat(auto-fit,minmax(240px, auto));
+  }
+  .contact_form .contact_img {
+    width: 300px;
+  }
+  footer .order h2 {
+    font-size: 1rem;
+  }
+  .footer .order_btn button {
+    font-size: 0.6rem;
+  }
+  .footer .order_btn a {
+    font-size: 0.8rem;
+  }
+ }
+ @media (max-width: 400px) {
+  header {
+    padding-left: 15px;
+    padding-right: 30px;
+  }
+  .home .container .home_text p {
+    font-size: 12px;
+  }
+  .container_content .whiskey_list {
+    font-size: 1rem;
+    padding-bottom: 10px;
+  }
+  .recommended_whiskey h3 {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+  }
+  .footer .social_media img {
+    width: 150px;
+  }
+  .footer .social_media .social_media_contact span i {
+    font-size: 1rem;
+    margin-right: 0px;
+  }
+  .footer .order h2 {
+    font-size: 0.7rem;
+  }
+  .footer .order .order_btn button{
+    font-size: 0.6rem;
+    padding: 5px 10px;
+  }
+  .footer .order .order_btn a {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+  .footer_navigation {
+    grid-template-columns:  repeat(auto-fit,minmax(140px, auto));
+  }
+  .footer_navigation_group_title {
+    font-size: 0.7rem;
+  }
+  .footer_navigation_group_nav_list_item {
+    margin: 5px 0px;
+  }
+  .footer_navigation_group_nav_list_item a {
+    font-size: 0.6rem;
+  }
+  .footer_copyright_firstText, .footer_copyright_secText {
+    font-size: 10px;
+  }
+ }
+ @media (max-width: 320px) {
+  .actual-text, .home_text {
+    font-size: 0.9rem;
+  }
+  header .btn-group .loginBtn {
+    margin: 0px 0px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  header .btn-group .registerBtn {
+    margin: 0px 0px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  .contact_form .contact_img img {
+    width: 250PX;
+  }
+ }
+
+ 
